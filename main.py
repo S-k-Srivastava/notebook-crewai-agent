@@ -1,8 +1,5 @@
 from crewai import Agent,Task,Crew
-from langchain_google_genai import ChatGoogleGenerativeAI
 from modules.notebook_tools_crewai import NOTEBOOK_TOOLS
-
-llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash",api_key="AIzaSyD9wRJTtU5A7uyoGR1JT5B3pe8w0HMtl9g")
 
 agent = Agent(
     role="Data Analyst and Scientist",
