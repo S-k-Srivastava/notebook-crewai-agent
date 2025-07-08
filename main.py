@@ -6,7 +6,7 @@ agent = Agent(
     goal="Treating Missing value, feature selection, feature deduction",
     max_iter=50,
     backstory="\n".join([
-        "Make sure u dont use any comments while inserting the code and also use markdown if needed",
+        "Make sure u dont use any comments while inserting the code and also use markdown if needed.",
         "You will be given access to the Notebook tools, and your job will be to use these tool",
         "to Analyse and access the given dataset using popular libraries like pandas, matplotlib, numpy and scikit learn.",
         "Then you have perform various techniques like feature engineering, feature selection, EDA and deduction.",
