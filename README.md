@@ -50,19 +50,69 @@ uv sync
 ## 📚 Notebook Tools Overview
 
 The core utility of this project is the **NotebookController**, a class that gives full control over Jupyter notebooks. It works both inside and outside CrewAI agents.
+---
 
-### 🔧 Available Methods:
+### ✅ **Notebook File Operations**
 
-* `create_notebook()`
-* `insert_cell(content, position)`
-* `update_cell(index, new_content)`
-* `delete_cell(index)`
-* `run_cell(index)`
-* `run_all()`
-* `start_kernel()`
-* `restart_kernel()`
+* `create_notebook(path: str)`
+* `load_notebook(path: str)`
+* `save_notebook()`
+* `export_to_format(format_type: str, output_path: Optional[str] = None)`
+* `get_notebook_metadata()`
+* `set_notebook_metadata(metadata: Dict)`
+* `get_notebook_info()`
 
 ---
+
+### 🔧 **Cell Management**
+
+* `insert_cell(cell_type: str, source: str, index: Optional[int], cell_id: Optional[str])`
+* `delete_cell(cell_id: str)`
+* `delete_cell_by_index(index: int)`
+* `get_cell(cell_id: str)`
+* `get_cell_by_index(index: int)`
+* `update_cell_source(cell_id: str, source: str)`
+* `move_cell(cell_id: str, new_index: int)`
+* `duplicate_cell(cell_id: str)`
+* `clear_cell_output(cell_id: str)`
+* `clear_all_outputs()`
+* `set_cell_metadata(cell_id: str, metadata: Dict)`
+
+---
+
+### ⚙️ **Kernel Management**
+
+* `start_kernel()`
+* `stop_kernel()`
+* `restart_kernel()`
+* `interrupt_kernel()`
+* `get_kernel_info()`
+
+---
+
+### 🧠 **Execution & Evaluation**
+
+* `run_cell(cell_id: str, timeout: int = 30)`
+* `run_cells(cell_ids: List[str], timeout: int = 30)`
+* `run_all_cells(timeout: int = 30)`
+* `run_cells_from_index(start_index: int, end_index: Optional[int], timeout: int = 30)`
+
+---
+
+### 🗺️ **Cell Info Utilities**
+
+* `get_cell_count()`
+* `get_cell_ids()`
+* `get_code_cell_ids()`
+* `get_cell_id_to_source_map()`
+
+---
+
+### 🧼 **Internal Helpers (Not intended for public use but useful internally)**
+
+* `_update_cell_id_map()`
+* `_generate_cell_id()`
+* `_trigger_visual_update()`
 
 ## 🧠 Agent Behavior Example
 
